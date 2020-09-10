@@ -121,5 +121,7 @@ class BooksController extends Controller
     {
         $book = Books::findOrFail($request->id_book)->delete();//usuwam pozycję 
         $books_categories = BooksCategories::where('id_book', $request->id_book)->delete();
+
+        return $request;
     }
 }
